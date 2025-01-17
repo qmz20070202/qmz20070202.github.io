@@ -1,0 +1,37 @@
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .chat-container {
+        margin: var(--spacing-md);
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .chat-messages {
+        height: 300px;
+    }
+}
+
+/* 添加一些动画效果 */
+.tool-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 155, 179, 0.2);
+} 

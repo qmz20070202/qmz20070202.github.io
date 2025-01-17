@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美妆新手村 - 零基础化妆教学</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo-container">
+                <img src="images/logo.svg" alt="美妆新手村" class="logo">
+                <h1>美妆新手村</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="pages/chapters/chapter1.html">基础入门</a></li>
+                <li><a href="pages/chapters/chapter2.html">底妆篇</a></li>
+                <li><a href="pages/chapters/chapter3.html">眼妆篇</a></li>
+                <li><a href="pages/chapters/chapter4.html">唇妆篇</a></li>
+                <li><a href="pages/chapters/chapter5.html">修容篇</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>从零开始的化妆之旅</h2>
+            <p>专为化妆小白打造的系统学习平台</p>
+            <a href="pages/chapters/chapter1.html" class="cta-button">开始学习</a>
+        </section>
+
+        <section id="learning-path" class="learning-path">
+            <h3>学习路径</h3>
+            <div class="path-cards">
+                <div class="path-card chapter1">
+                    <div class="card-content">
+                        <span class="chapter-number">01</span>
+                        <h4>基础入门</h4>
+                        <p>了解化妆基础知识和工具使用</p>
+                        <ul class="chapter-points">
+                            <li>化妆的重要性</li>
+                            <li>基础工具介绍</li>
+                            <li>护肤基础知识</li>
+                            <li>化妆基本步骤</li>
+                        </ul>
+                        <a href="pages/chapters/chapter1.html" class="start-btn">开始学习</a>
+                    </div>
+                </div>
+
+                <div class="path-card chapter2">
+                    <div class="card-content">
+                        <span class="chapter-number">02</span>
+                        <h4>底妆篇</h4>
+                        <p>打造完美无瑕的底妆</p>
+                        <ul class="chapter-points">
+                            <li>底妆前准备</li>
+                            <li>产品选择指南</li>
+                            <li>上妆技巧</li>
+                            <li>常见问题解答</li>
+                        </ul>
+                        <a href="pages/chapters/chapter2.html" class="start-btn">开始学习</a>
+                    </div>
+                </div>
+
+                <div class="path-card chapter3">
+                    <div class="card-content">
+                        <span class="chapter-number">03</span>
+                        <h4>眼妆篇</h4>
+                        <p>塑造迷人眼妆</p>
+                        <ul class="chapter-points">
+                            <li>眼型分析</li>
+                            <li>眼影技巧</li>
+                            <li>眼线画法</li>
+                            <li>睫毛处理</li>
+                        </ul>
+                        <a href="pages/chapters/chapter3.html" class="start-btn">开始学习</a>
+                    </div>
+                </div>
+
+                <div class="path-card chapter4">
+                    <div class="card-content">
+                        <span class="chapter-number">04</span>
+                        <h4>唇妆篇</h4>
+                        <p>打造诱人唇妆</p>
+                        <ul class="chapter-points">
+                            <li>唇型分析</li>
+                            <li>唇妆产品选择</li>
+                            <li>上妆技巧</li>
+                            <li>持久度维持</li>
+                        </ul>
+                        <a href="pages/chapters/chapter4.html" class="start-btn">开始学习</a>
+                    </div>
+                </div>
+
+                <div class="path-card chapter5">
+                    <div class="card-content">
+                        <span class="chapter-number">05</span>
+                        <h4>修容篇</h4>
+                        <p>打造立体轮廓</p>
+                        <ul class="chapter-points">
+                            <li>脸型分析</li>
+                            <li>修容技巧</li>
+                            <li>高光运用</li>
+                            <li>整体协调</li>
+                        </ul>
+                        <a href="pages/chapters/chapter5.html" class="start-btn">开始学习</a>
+                    </div>
+                </div>
+
+                <div class="path-card chapter6">
+                    <div class="card-content">
+                        <span class="chapter-number">06</span>
+                        <h4>品牌推荐</h4>
+                        <p>专业美妆产品导购指南</p>
+                        <ul class="chapter-points">
+                            <li>底妆产品推荐</li>
+                            <li>眼部产品精选</li>
+                            <li>唇部产品榜单</li>
+                            <li>修容产品测评</li>
+                        </ul>
+                        <a href="pages/chapters/chapter6.html" class="start-btn">开始学习</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-assistant">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3>AI美妆助手</h3>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- AI欢迎消息 -->
+                    <div class="message ai">
+                        <div class="message-content">
+                            <div class="ai-avatar"></div>
+                            你好！我是你的美妆AI助手，有什么可以帮你的吗？
+                        </div>
+                    </div>
+                    
+                    <!-- 用户消息示例 -->
+                    <div class="message user">
+                        <div class="message-content">
+                            <div class="user-avatar"></div>
+                            请问新手化妆要准备哪些基础工具？
+                        </div>
+                    </div>
+                    
+                    <!-- AI回复示例 -->
+                    <div class="message ai">
+                        <div class="message-content">
+                            <div class="ai-avatar"></div>
+                            作为新手，建议准备以下基础工具：
+                            1. 粉底液和粉底刷
+                            2. 遮瑕膏
+                            3. 散粉和散粉刷
+                            4. 眉笔
+                            5. 睫毛夹和睫毛膏
+                            6. 唇膏
+                            要不要我详细介绍每个工具的使用方法？
+                        </div>
+                    </div>
+                    
+                    <!-- 加载动画指示器 -->
+                    <div class="typing-indicator" id="typingIndicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="输入您的问题...">
+                    <button id="sendButton">发送</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>美妆新手村致力于为化妆初学者提供简单易懂的美妆教程，帮助您轻松掌握化妆技巧。</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>快速导航</h3>
+                <ul>
+                    <li><a href="pages/chapters/chapter1.html">基础入门</a></li>
+                    <li><a href="pages/chapters/chapter2.html">底妆篇</a></li>
+                    <li><a href="pages/chapters/chapter3.html">眼妆篇</a></li>
+                    <li><a href="pages/chapters/chapter4.html">唇妆篇</a></li>
+                    <li><a href="pages/chapters/chapter5.html">修容篇</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>联系我们</h3>
+                <ul class="contact-info">
+                    <li>📧 tel:18855409060</li>
+                    <li>📱 关注公众号：暂无公众号</li>
+                    <li>📍 更多精彩内容持续更新中</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 美妆新手村 版权所有</p>
+            <p>用专业的态度，分享美的知识</p>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

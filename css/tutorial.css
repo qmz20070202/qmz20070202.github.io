@@ -1,0 +1,784 @@
+/* 教程页面布局 */
+.tutorial-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* 侧边导航 */
+.chapter-nav {
+    position: sticky;
+    top: var(--spacing-lg);
+    height: fit-content;
+    padding: var(--spacing-md);
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.chapter-nav h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.chapter-nav ul {
+    list-style: none;
+}
+
+.chapter-nav a {
+    display: block;
+    padding: var(--spacing-sm);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.chapter-nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+/* 主要内容区域 */
+.main-content {
+    background-color: var(--background-color);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-content h1 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+.main-content section {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* 工具卡片网格 */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.tool-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+}
+
+.tool-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 提示框样式 */
+.tips-box {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.tips-box h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 步骤列表 */
+.steps-list {
+    padding-left: var(--spacing-xl);
+}
+
+.steps-list li {
+    margin-bottom: var(--spacing-md);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .tutorial-content {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-nav {
+        position: static;
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+/* 产品卡片样式 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.product-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.product-tips h4 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+}
+
+.product-tips ul {
+    list-style: none;
+    padding-left: var(--spacing-md);
+}
+
+.product-tips li {
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+}
+
+.product-tips li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: -1em;
+}
+
+/* 技巧展示区域 */
+.technique-container {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.technique-step {
+    background-color: var(--primary-color);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+}
+
+.technique-step h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Q&A 样式 */
+.qa-section {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.qa-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+}
+
+.qa-item h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.qa-item p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .technique-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tool-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover .tool-image {
+    transform: scale(1.05);
+}
+
+/* 产品推荐样式 */
+.product-reviews {
+    margin: var(--spacing-lg) 0;
+}
+
+.product-review-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.product-review-card h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.product-item {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(255, 155, 179, 0.15);
+}
+
+.product-item h4 {
+    color: var(--accent-color);
+    font-size: 1.2em;
+    margin-bottom: var(--spacing-md);
+}
+
+.product-details h5 {
+    color: var(--text-color);
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+    font-weight: 600;
+}
+
+.product-details ul {
+    list-style: none;
+    padding-left: var(--spacing-md);
+}
+
+.product-details li {
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+}
+
+.product-details li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: -1em;
+}
+
+.price-range {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-color);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .product-item {
+        padding: var(--spacing-md);
+    }
+    
+    .product-details ul {
+        padding-left: var(--spacing-sm);
+    }
+}
+
+/* 爱心评分样式 */
+.rating, .empty-rating {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.rating {
+    color: var(--accent-color);
+}
+
+.empty-rating {
+    color: rgba(255, 155, 179, 0.3);
+}
+
+/* 价格标签样式 */
+.price-tag {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    margin-left: var(--spacing-sm);
+    font-weight: 600;  /* 加粗显示 */
+}
+
+/* 产品展示区域布局优化 */
+.product-section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding: 20px 0;
+}
+
+.product-section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.product-section-header h2 {
+    font-size: 2em;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.product-section-header p {
+    color: var(--text-color);
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-category-intro {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    padding: 20px;
+    background: linear-gradient(to right, var(--primary-color), transparent);
+    border-radius: 10px;
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-description {
+    flex: 1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+/* 产品卡片样式优化 */
+.product-item {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.product-details {
+    padding: var(--spacing-lg);
+}
+
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.product-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.product-item {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: var(--spacing-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(255, 155, 179, 0.15);
+}
+
+.product-details h4 {
+    color: var(--accent-color);
+    font-size: 1.2em;
+    margin-bottom: var(--spacing-lg);
+}
+
+.product-details h5 {
+    color: var(--text-color);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    font-weight: 600;
+}
+
+.product-details ul {
+    list-style: none;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.product-details li {
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    line-height: 1.6;
+}
+
+.product-details li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: -1em;
+    top: 0;
+}
+
+/* 眉毛知识模块样式 */
+.eyebrow-section {
+    background: linear-gradient(to right, #fff5f7, #fff);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.1);
+}
+
+.intro-text {
+    text-align: center;
+    color: #ff6b81;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.importance-box {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(255, 192, 203, 0.15);
+}
+
+.importance-box h3 {
+    color: #ff6b81;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.importance-box h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #ffb6c1, #ff6b81);
+}
+
+.importance-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.importance-list li {
+    background-color: #fff5f7;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.importance-list li:hover {
+    transform: translateY(-2px);
+    background-color: #ffe4e8;
+}
+
+.importance-list li::before {
+    content: '♥';
+    color: #ff6b81;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.analysis-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(255, 192, 203, 0.1);
+    transition: all 0.3s ease;
+}
+
+.analysis-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 192, 203, 0.2);
+}
+
+.analysis-card h4 {
+    color: #ff6b81;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ffe4e8;
+}
+
+.analysis-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.analysis-card li {
+    padding: 8px 0;
+    color: #666;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.analysis-card li::before {
+    content: '•';
+    color: #ff6b81;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+/* 步骤流程样式 */
+.steps-flow {
+    position: relative;
+    padding: 30px 0;
+    margin: 30px 0;
+}
+
+.steps-flow::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 35px;
+    width: 2px;
+    height: calc(100% - 100px);
+    background: linear-gradient(to bottom, #ffb6c1, #ff6b81);
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.step-number {
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ff6b81;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 107, 129, 0.2);
+    margin-right: 20px;
+    z-index: 1;
+}
+
+.step-content {
+    flex: 1;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.step-content h4 {
+    color: #ff6b81;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.step-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.step-content li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: #666;
+}
+
+.step-content li::before {
+    content: '•';
+    color: #ff6b81;
+    position: absolute;
+    left: 0;
+}
+
+.tips-box {
+    background: #fff5f7;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.tips-box h4 {
+    color: #ff6b81;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.tips-box ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.tips-box li {
+    padding-left: 20px;
+    position: relative;
+    color: #666;
+}
+
+.tips-box li::before {
+    content: '!';
+    color: #ff6b81;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* 视频部分样式 */
+.video-section {
+    margin-bottom: var(--spacing-xl);
+    background: var(--background-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    padding: var(--spacing-lg);
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    padding-bottom: 50.625%;
+    background: var(--secondary-color);
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.video-credit {
+    padding: var(--spacing-md);
+    background: var(--primary-color);
+    text-align: right;
+    font-size: 0.9em;
+    color: var(--text-color);
+    width: 90%;
+    margin: var(--spacing-sm) auto 0;
+    border-radius: 10px;
+}
+
+.video-credit a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.video-credit a:hover {
+    color: #ff6b81;
+    text-decoration: underline;
+}
+
+/* 确保AI助手在侧边导航栏旁边正确显示 */
+@media (min-width: 1024px) {
+    .tutorial-content .ai-assistant {
+        margin-left: 250px; /* 与侧边栏宽度对应 */
+    }
+} 
