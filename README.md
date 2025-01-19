@@ -15,4 +15,7 @@
 - JavaScript
 - 响应式设计
 
-## 目录结构 
+## 目录结构
+
+## 在线访问
+- GitHub访问地址：[美妆新手村](https://qmz20070202.github.io) 

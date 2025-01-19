@@ -1,0 +1,16 @@
+{
+  "name": "cosmetic-teaching-website",
+  "version": "1.0.0",
+  "description": "美妆新手村 - 零基础化妆教学网站",
+  "main": "index.js",
+  "scripts": {
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "firebase": "^10.8.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.2"
+  }
+} 

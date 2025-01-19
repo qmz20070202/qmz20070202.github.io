@@ -150,13 +150,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 添加平滑滚动
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // 修改平滑滚动代码，只处理页面内部锚点链接
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 

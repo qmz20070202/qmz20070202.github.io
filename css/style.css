@@ -94,61 +94,147 @@ body {
     width: 100%;
 }
 
-/* 主要内容区域 */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    color: white;
-    text-align: center;
-    padding: var(--spacing-xl) var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-}
-
-.hero h2 {
-    font-size: 2.5em;
-    margin-bottom: var(--spacing-md);
-    transition: all 0.3s ease;
+/* 新的英雄区域样式 */
+.hero-section {
+    background: linear-gradient(135deg, #FFF0F5, #FF9BB3);
+    padding: 80px 20px;
     position: relative;
-    display: inline-block;
+    overflow: hidden;
 }
 
-.hero h2:hover {
-    transform: translateY(-4px);
-    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: var(--spacing-lg);
-    transition: all 0.3s ease;
-}
-
-.hero p:hover {
-    transform: translateY(-4px);
-    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
-}
-
-.cta-button {
-    display: inline-block;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: white;
-    color: var(--accent-color);
-    text-decoration: none;
-    border-radius: 25px;
+.hero-title {
+    color: white;
+    font-size: 3em;
+    margin-bottom: 20px;
     font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(255, 155, 179, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
 }
 
-.cta-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(255, 155, 179, 0.3);
-    background-color: #fff5f7;
-    cursor: pointer;
+.hero-subtitle {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
-.cta-button:active {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(255, 155, 179, 0.2);
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    animation: fadeIn 1s ease-out 0.4s backwards;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.feature-item p {
+    color: #FF9BB3;
+    font-weight: bold;
+}
+
+.hero-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/decorative/pattern.svg');
+    background-size: 30px;
+    opacity: 0.1;
+    animation: float 20s linear infinite;
+}
+
+/* 动画关键帧 */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 80%;
+        max-width: 300px;
+    }
 }
 
 /* 学习路径卡片 */
@@ -745,5 +831,313 @@ body {
     
     .chat-messages {
         min-height: 600px;
+    }
+} 
+
+/* 导航栏容器 */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* 导航栏登录按钮 */
+.nav-login-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-login-btn:hover {
+    background: #ff8ba5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 155, 179, 0.2);
+}
+
+.nav-login-btn.logged-in {
+    background: #4CAF50;
+}
+
+.nav-login-btn.logged-in:hover {
+    background: #45a049;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    width: 90%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+}
+
+/* 关闭按钮 */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* 登录容器样式 */
+.login-container {
+    text-align: center;
+}
+
+.login-container h2 {
+    color: var(--text-color);
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.login-container .subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+/* 社交登录按钮 */
+.social-login {
+    margin-bottom: 32px;
+}
+
+.google-login {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.google-login:hover {
+    border-color: var(--accent-color);
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.google-login img {
+    width: 24px;
+    height: 24px;
+}
+
+/* 分割线 */
+.divider {
+    text-align: center;
+    margin: 24px 0;
+    position: relative;
+    color: #999;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 80px);
+    height: 1px;
+    background: var(--border-color);
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+/* 表单样式 */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: var(--background-color);
+}
+
+.input-group input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 155, 179, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+.toggle-password img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 记住我和忘记密码 */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    font-size: 14px;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #ff8ba5;
+    text-decoration: underline;
+}
+
+/* 登录按钮 */
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background: #ff8ba5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 155, 179, 0.3);
+}
+
+/* 注册提示 */
+.register-hint {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    color: #ff8ba5;
+    text-decoration: underline;
+}
+
+/* 动画 */
+@keyframes slideIn {
+    from {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 20px auto;
+        padding: 30px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 24px;
+    }
+
+    .login-container .subtitle {
+        font-size: 14px;
     }
 } 
